@@ -3,7 +3,7 @@ from grammar import grammar
 
 
 # Parse the input string using the CKY algorithm
-parse_tree = CKY(['the', 'dog', 'barks'], grammar)
+parse_tree = CKY("yüksek sesle müzik dinleme".split(), grammar)
 
 # Print the parse tree
 print(parse_tree)

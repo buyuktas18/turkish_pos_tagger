@@ -59,6 +59,7 @@ def CKY(words, grammar):
     result_tags = [x for x in table[0][len(words) - 1]]
     for n in result_tags:
         if 'S' == n.data:
+            print(n.data)
             node = n
             print_tree(n)
 
@@ -91,7 +92,7 @@ def buildParseTree(table, words, start, end, nonterminal):
 
 def print_tree(node, level=0):
     if node is not None:
-        print_tree(node.prev, level+1)
-        print(' ' * 4 * level + '->', node.data)
         print_tree(node.next, level+1)
+        print(' ' * 4 * level + '->', node.data)
+        print_tree(node.prev, level+1)
 
